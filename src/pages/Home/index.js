@@ -13,7 +13,10 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
-  const {last} = useData()
+  const {data} = useData()
+  const test = data?.events?.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const last = test?.[0];
+  //ajout du tri manquant
   return <>
     <header>
       <Menu />
@@ -116,13 +119,14 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
+        { (last) ? // last n'était pas correctement définie et pas correctement appeler
         <EventCard
           imageSrc={last?.cover}
           title={last?.title}
           date={new Date(last?.date)}
           small
           label="boom"
-        />
+        /> :'null' }
       </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>
