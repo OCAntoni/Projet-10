@@ -14,6 +14,7 @@ describe("When Events is created", () => {
     it("the success action is called", async () => {
       const onSuccess = jest.fn();
       render(<Form onSuccess={onSuccess} />);
+      await screen.findByText("Envoyer"); // replacement du await envoyer qui était en fin de test et provoquer un warning
       fireEvent(
         await screen.findByTestId("button-test-id"),
         new MouseEvent("click", {
@@ -22,7 +23,6 @@ describe("When Events is created", () => {
         })
       );
       await screen.findByText("En cours");
-      await screen.findByText("Envoyer");
       expect(onSuccess).toHaveBeenCalled();
     });
   });

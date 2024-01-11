@@ -13,4 +13,4 @@ export const MONTHS = {
   12: "décembre",
 };
 
-export const getMonth = (date) => MONTHS[date.getMonth()+1];//tableau demarre à 1
+export const getMonth = (date) => MONTHS[date.getMonth()+1];//fonction getmounth démarre à 0

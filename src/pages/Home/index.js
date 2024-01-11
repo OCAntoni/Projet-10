@@ -119,7 +119,7 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-        { (last) ? // last n'était pas correctement définie et pas correctement appeler
+        { last ? // last n'était pas correctement définie et pas correctement appeler
         <EventCard
           imageSrc={last?.cover}
           title={last?.title}
@@ -134,16 +134,16 @@ const Page = () => {
         <div>01 23 45 67 89</div>
         <div>contact@724events.com</div>
         <div>
-          <a target="_blank" href="https://www.twitch.tv">
+          <a rel="noopener noreferrer" target="_blank" href="https://www.twitch.tv">
             <Icon name="twitch" />
           </a>
-          <a target="_blank" href="https://www.facebook.com">
+          <a rel="noopener noreferrer" target="_blank" href="https://www.facebook.com">
             <Icon name="facebook" />
           </a>
-          <a target="_blank" href="https://twitter.com">
+          <a rel="noopener noreferrer" target="_blank" href="https://twitter.com">
             <Icon name="twitter" />
           </a>
-          <a target="_blank" href="https://www.youtube.com">
+          <a rel="noopener noreferrer" target="_blank" href="https://www.youtube.com">
             <Icon name="youtube" />
           </a>
         </div>

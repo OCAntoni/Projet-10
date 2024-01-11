@@ -42,3 +42,4 @@ describe("When slider is created", () => {
     );
   });
 });
+// test pour vérifier si slider est dans le bon ordre chronologique + le bon titre + le bon texte
