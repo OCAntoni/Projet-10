@@ -12,11 +12,12 @@ import Form from "../../containers/Form";
 import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
-const Page = () => {
+const Page = () => { //* le chemin pour recuperer les donees n'etait pas definies
   const {data} = useData()
   const test = data?.events?.sort((a, b) => new Date(b.date) - new Date(a.date));
+  //* tri des evenements par ordre decroissant
   const last = test?.[0];
-  //ajout du tri manquant
+  //*  Si test est un tableau non vide, alors last sera égal au premier élément du tableau egal a l'evenement le plus récent
   return <>
     <header>
       <Menu />
@@ -119,7 +120,7 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-        { last ? // last n'était pas correctement définie et pas correctement appeler
+        { last ? // last n'était pas correctement définie et pas correctement appeler pour englober la carte
         <EventCard
           imageSrc={last?.cover}
           title={last?.title}

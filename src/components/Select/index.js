@@ -16,7 +16,7 @@ const Select = ({
   const [value, setValue] = useState();
   const [collapsed, setCollapsed] = useState(true);
   const changeValue = (newValue) => {
-    onChange(newValue); // ajout du parmètre manquant pour définir valeur filtre
+    onChange(newValue); // ajout du parmètre manquant pour définir valeur filtre comme argument
     setValue(newValue);
     setCollapsed(newValue);
   };

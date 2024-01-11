@@ -8,10 +8,10 @@ const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
+    new Date(evtA.date) < new Date(evtB.date) ? -1 : 1//* incrémentation fausse
   );
   const nextCard = () => {
-    if(byDateDesc !== undefined){ // suppresion de 2X codes erreur console
+    if(byDateDesc !== undefined){ //* verification si le slider n'est pas "indéfini", suppresion de 2X codes erreur console,
     setTimeout(
       () => setIndex(index < byDateDesc.length -1 ? index + 1 : 0),
       5000
@@ -43,13 +43,13 @@ const Slider = () => {
           </div>
           <div className="SlideCard__paginationContainer">
             <div className="SlideCard__pagination">
-              {byDateDesc.map((test, radioIdx) => (
+              {byDateDesc.map((test, radioIdx) => ( //* redefinition du 1er paramètre pour la key
                 <input
-                  key={`${test.title}`}
+                  key={`${test.title}`}//* correction erreur sur la key
                   type="radio"
                   name="radio-button"
-                  checked={index === radioIdx}
-                  readOnly // correction erreur console
+                  checked={index === radioIdx} //* variable d'état mal definie
+                  readOnly //* correction erreur console
                 />
               ))}
             </div>
