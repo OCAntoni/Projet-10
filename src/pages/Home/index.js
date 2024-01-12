@@ -15,7 +15,7 @@ import { useData } from "../../contexts/DataContext";
 const Page = () => { //* le chemin pour recuperer les donees n'etait pas definies
   const {data} = useData()
   const test = data?.events?.sort((a, b) => new Date(b.date) - new Date(a.date));
-  //* tri des evenements par ordre decroissant
+  //* tri des evenements par ordre decroissant, correction classement cartes evenements + carte footer
   const last = test?.[0];
   //*  Si test est un tableau non vide, alors last sera égal au premier élément du tableau egal a l'evenement le plus récent
   return <>
@@ -120,7 +120,7 @@ const Page = () => { //* le chemin pour recuperer les donees n'etait pas definie
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-        { last ? // last n'était pas correctement définie et pas correctement appeler pour englober la carte
+        { last ? // last n'était pas correctement définie et pas correctement appeler pour englober la carte correctionn erreur test
         <EventCard
           imageSrc={last?.cover}
           title={last?.title}

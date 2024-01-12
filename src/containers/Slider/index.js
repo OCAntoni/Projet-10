@@ -8,12 +8,12 @@ const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) < new Date(evtB.date) ? -1 : 1//* incrémentation fausse
+    new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
   );
   const nextCard = () => {
     if(byDateDesc !== undefined){ //* verification si le slider n'est pas "indéfini", suppresion de 2X codes erreur console,
     setTimeout(
-      () => setIndex(index < byDateDesc.length -1 ? index + 1 : 0),
+      () => setIndex(index < byDateDesc.length -1 ? index + 1 : 0), //* tableau se termine à 2
       5000
     );
     }

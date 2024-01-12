@@ -12,10 +12,10 @@ describe("When Events is created", () => {
 
   describe("and a click is triggered on the submit button", () => {
     it("the success action is called", async () => {
-      const onSuccess = jest.fn();
+      const onSuccess = jest.fn(); //* creation mock fonction
       render(<Form onSuccess={onSuccess} />);
-      await screen.findByText("Envoyer"); // replacement du await envoyer qui était en fin de test et provoquer un warning
-      fireEvent(
+      await screen.findByText("Envoyer"); //* replacement du await envoyer qui était en fin de test et provoquer un warning
+      fireEvent( //* simule click sur boutton de soumission
         await screen.findByTestId("button-test-id"),
         new MouseEvent("click", {
           cancelable: true,
