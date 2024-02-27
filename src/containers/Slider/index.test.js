@@ -37,9 +37,7 @@ describe("When slider is created", () => {
     );
     await screen.findByText("World economic forum");
     await screen.findByText("janvier");
-    await screen.findByText(
-      "Oeuvre à la coopération entre le secteur public et le privé."
-    );
+    await screen.findByText("Oeuvre à la coopération entre le secteur public et le privé.");
   });
 });
 // test pour vérifier si slider est dans le bon ordre chronologique + le bon titre + le bon texte

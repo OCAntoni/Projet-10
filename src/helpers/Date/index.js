@@ -13,4 +13,4 @@ export const MONTHS = {
   12: "décembre",
 };
 
-export const getMonth = (date) => MONTHS[date.getMonth()+1];//fonction getmounth démarre à 0 et va de 0 à 11, 0 =janvier correction erreur des mois
+export const getMonth = (date) => MONTHS[date.getMonth()+1];//les mois dans l'objet sont indexer de 0 à 11, 0 =janvier correction erreur des mois
